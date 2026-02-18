@@ -36,7 +36,7 @@ export default function Hero() {
     <main className="min-h-screen bg-[#FDFCF6] cursor-pointer text-[#1A1A1A] font-sans selection:bg-orange-200">
       
       {/* --- 1. NAVIGATION BAR --- */}
-      <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-10">
           <div className="flex items-center gap-2 font-black text-2xl tracking-tighter">
             <div className="w-6 h-6 bg-[#FF8A65] rounded-sm rotate-12 border-2 border-black"></div>
@@ -49,7 +49,7 @@ export default function Hero() {
             <a href="#" className="hover:text-black">Pricing</a>
           </div>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <button className="text-sm font-bold">Sign in</button>
           <button className="bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-black transition-colors">
             Start free <ArrowRight size={16} />
@@ -80,7 +80,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto px-6 md:pt-20 pb-12"
         >
-          <h1 className="text-6xl md:text-[90px] font-black leading-[0.9] tracking-tight mb-6 md:leading-[0.9] max-w-4xl">
+         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[90px] font-black leading-[1] md:leading-[0.9] tracking-tight mb-6 max-w-4xl">
             Regain{" "}
             <span className="relative inline-block">
               <span className="relative z-10">control</span>
@@ -89,14 +89,14 @@ export default function Hero() {
             over your days
           </h1>
 
-          <p className="text-[#666] max-w-lg text-lg md:text-xl font-medium mb-10 leading-relaxed">
+          <p className="text-[#666] max-w-lg text-base sm:text-lg md:text-xl font-medium mb-8 sm:mb-10 leading-relaxed">
             Stop rushing — centralize, prioritize and progress on projects across apps.
           </p>
 
           <motion.button
             whileHover={{ y: 4 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#78D98C] border-2 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] px-10 py-4 rounded-full font-black text-lg"
+            className="bg-[#78D98C] border-2 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] px-6 sm:px-10 py-3 sm:py-4 rounded-full font-black text-base sm:text-lg"
           >
             Get Started →
           </motion.button>
@@ -105,7 +105,7 @@ export default function Hero() {
 
       {/* ================= 3D DASHBOARD ================= */}
 
-      <section className="max-w-6xl mx-auto px-4 md:px-6 mb-24 relative">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24 relative">
         <motion.div
           whileHover={{
             rotateX: 6,
@@ -113,7 +113,7 @@ export default function Hero() {
             scale: 1.02,
           }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="bg-[#121212] rounded-4xl p-6 shadow-2xl border-[6px] border-[#1A1A1A] perspective-1000"
+          className="bg-[#121212] rounded-3xl sm:rounded-4xl p-4 sm:p-6 shadow-2xl border-4 sm:border-[6px] border-[#1A1A1A]"
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Mock Header */}
@@ -136,13 +136,13 @@ export default function Hero() {
               <div className="bg-[#1E1E1E] px-4 py-3 flex items-center justify-between border-b border-white/5 md:px-6">
                 <div className="flex items-center gap-6 md:gap-10">
                   {/* Window Controls */}
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 hidden sm:flex">
                     <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                     <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                     <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                   </div>
                   {/* Navigation Arrows */}
-                  <div className="flex gap-4 text-gray-500">
+                  <div className="flex gap-4 text-gray-500 hidden sm:flex">
                     <Sidebar size={18} />
                     <ChevronLeft size={18} />
                     <ChevronRight size={18} />
@@ -162,7 +162,7 @@ export default function Hero() {
                 </div>
 
                 {/* Action Icons */}
-                <div className="flex items-center gap-4 text-gray-400">
+                <div className="flex items-center gap-4 text-gray-400 hidden sm:flex">
                   <Share size={18} />
                   <Plus size={18} />
                   <div className="w-4 h-4 border-2 border-gray-400 rounded-sm" />
@@ -171,7 +171,7 @@ export default function Hero() {
 
               <div className="flex gap-6">
                 {/* Sidebar */}
-                <aside className="w-40 hidden md:block space-y-4">
+               <aside className="w-32 lg:w-40 hidden md:block space-y-4">
                   <SidebarItem icon={<LayoutGrid size={16}/>} label="Home" active />
                   <SidebarItem icon={<CheckSquare size={16}/>} label="My Tasks" />
                   <SidebarItem icon={<Calendar size={16}/>} label="My Plan" />
@@ -196,7 +196,7 @@ export default function Hero() {
         </motion.div>
 
           {/* NEW OFFER POPUP CARD (The item you just requested) */}
-        <div className="absolute -left-10 top-90 z-20 w-80 bg-[#1A1D21] border border-white/10 rounded-[24px] p-6 shadow-2xl shadow-black/50 scale-90 md:scale-100">
+          {/* <div className="absolute left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 md:-left-10 top-[110%] md:top-90 z-20 w-[90%] max-w-sm md:w-80 bg-[#1A1D21] border border-white/10 rounded-[24px] p-4 sm:p-6 shadow-2xl shadow-black/50 scale-95 sm:scale-100">
           <div className="flex items-center gap-2 mb-6">
             <Rocket className="text-orange-400" size={24} fill="currentColor" />
             <h3 className="text-white font-bold text-xl">New Offer</h3>
@@ -206,12 +206,12 @@ export default function Hero() {
             <Tag icon={<Link2 size={12}/>} text="Shared by" />
             <Tag icon={<Calendar size={12}/>} text="Planned" />
             <Tag icon={<Flame size={12}/>} text="Impact" />
-          </div>
+          </div> */}
 
           {/* Bar Chart Section */}
-          <div className="flex justify-between h-32 mb-6 px-2 border-l border-white/10 relative md:px-4">
+          {/* <div className="flex justify-between h-28 sm:h-32 mb-6 px-2 border-l border-white/10 relative"> */}
             {/* Grid lines */}
-            <div className="absolute left-0 w-full h-[1px] bg-white/5 top-0" />
+            {/* <div className="absolute left-0 w-full h-[1px] bg-white/5 top-0" />
             <div className="absolute left-0 w-full h-[1px] bg-white/5 top-1/4" />
             <div className="absolute left-0 w-full h-[1px] bg-white/5 top-2/4" />
             <div className="absolute left-0 w-full h-[1px] bg-white/5 top-3/4" />
@@ -233,15 +233,15 @@ export default function Hero() {
           <div className="flex justify-between text-[10px] font-bold text-gray-500 uppercase px-2">
             <span>Slack</span><span>Asana</span><span>Notion</span>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ================= PREMIUM TICKERS ================= */}
-      <div className="space-y-2 pb-16">
+      {/* <div className="space-y-2 pb-16">
         <Ticker bg="bg-[#FFD54F]" text="Tasks • Dashboard • Agenda • Projects" />
         <Ticker bg="bg-[#FF8A65]" text="Automations • Recurring Tasks • Timeline" reverse />
         <Ticker bg="bg-[#78D98C]" text="Task Management • Remote Teams • Teamwork" />
-      </div>
+      </div> */}
 
     </main>
   );
