@@ -274,11 +274,11 @@ export default function Hero() {
       </section>
 
       {/* ================= PREMIUM TICKERS ================= */}
-      {/* <div className="space-y-2 pb-16">
+      <div className="space-y-2 pb-16">
         <Ticker bg="bg-[#FFD54F]" text="Tasks • Dashboard • Agenda • Projects" />
         <Ticker bg="bg-[#FF8A65]" text="Automations • Recurring Tasks • Timeline" reverse />
         <Ticker bg="bg-[#78D98C]" text="Task Management • Remote Teams • Teamwork" />
-      </div> */}
+      </div>
 
     </main>
   );
