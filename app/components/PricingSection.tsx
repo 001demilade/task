@@ -5,17 +5,17 @@ import { Sparkles, Check, ArrowRight } from 'lucide-react';
 
 export default function PricingSection() {
   return (
-    <section className="bg-[#121212] py-24 px-6 rounded-t-[60px] mt-20">
-      <div className="max-w-7xl mx-auto text-center mb-20">
-        <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-6">
-          Easily organize your work. Start free.
-        </h2>
-        <p className="text-gray-400 text-lg font-medium">
-          Access Sure's features. No credit card required.
-        </p>
-      </div>
+       <section className="bg-[#121212] py-16 sm:py-20 md:py-24 px-4 sm:px-6 rounded-t-[40px] sm:rounded-t-[60px] mt-16 sm:mt-20">
+        <div className="max-w-7xl mx-auto text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight sm:tracking-tighter mb-4 sm:mb-6">
+                Easily organize your work. Start free.
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg font-medium">
+                Access Sure's features. No credit card required.
+            </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-0 items-stretch">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* BASIC TIER */}
         <PricingCard 
           tier="Basic"
@@ -85,38 +85,57 @@ interface PricingProps {
 
 function PricingCard({ tier, price, desc, color, features, buttonStyle, isPopular }: PricingProps) {
   return (
-    <div className="flex flex-col group">
-      {/* Top Half - Color section */}
-      <div className={`${color} p-10 rounded-t-3xl border-x border-t border-black/10 flex-1 flex flex-col relative`}>
+    <div className="flex flex-col group h-full">
+      
+      {/* Top Section */}
+      <div className={`${color} p-6 sm:p-8 md:p-10 rounded-t-3xl border-x border-t border-black/10 flex flex-col relative`}>
+        
         {isPopular && (
-          <div className="absolute -top-12 left-0 right-0 bg-[#FFD54F] py-3 rounded-t-2xl border-x border-t border-black/10 text-center font-black text-sm uppercase tracking-widest">
+          <div className="absolute -top-6 sm:-top-8 left-4 right-4 bg-[#FFD54F] py-2 rounded-xl border border-black/10 text-center font-black text-xs uppercase tracking-widest">
             Most Popular
           </div>
         )}
-        <h3 className="text-3xl font-black mb-4">{tier}</h3>
-        <p className="text-sm font-bold opacity-70 mb-8 leading-relaxed">{desc}</p>
+
+        <h3 className="text-2xl sm:text-3xl font-black mb-3 sm:mb-4">{tier}</h3>
+
+        <p className="text-xs sm:text-sm font-bold opacity-70 mb-6 sm:mb-8 leading-relaxed">
+          {desc}
+        </p>
+
         <div className="mt-auto">
-          <div className="flex items-baseline gap-2 mb-6">
-            <span className="text-5xl font-black italic">{price}</span>
-            <div className="text-[10px] font-bold leading-none opacity-60">
-              Excl. VAT<br/>Per month
+          <div className="flex items-baseline gap-2 mb-4 sm:mb-6">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-black italic">
+              {price}
+            </span>
+            <div className="text-[9px] sm:text-[10px] font-bold leading-none opacity-60">
+              Excl. VAT<br />Per month
             </div>
           </div>
-          <button className={`w-full py-4 rounded-full font-black text-sm uppercase tracking-tighter transition-all hover:scale-[1.02] active:scale-95 ${buttonStyle}`}>
+
+          <button className={`w-full py-3 sm:py-4 rounded-full font-black text-xs sm:text-sm uppercase tracking-tight transition-all hover:scale-[1.02] active:scale-95 ${buttonStyle}`}>
             Get Started
           </button>
         </div>
       </div>
 
-      {/* Bottom Half - Feature List (White/Off-white) */}
-      <div className="bg-white/5 p-10 rounded-b-3xl border-x border-b border-white/5">
-        <p className="text-[10px] font-black uppercase text-gray-500 tracking-widest mb-6">
-          {tier === 'Scale' ? 'Everything in Premium:' : tier === 'Enterprise' ? 'Custom to-dos:' : 'Manage tasks to-dos:'}
+      {/* Bottom Section */}
+      <div className="bg-white/5 p-6 sm:p-8 md:p-10 rounded-b-3xl border-x border-b border-white/5 flex-1">
+        <p className="text-[9px] sm:text-[10px] font-black uppercase text-gray-500 tracking-widest mb-4 sm:mb-6">
+          {tier === 'Scale'
+            ? 'Everything in Premium:'
+            : tier === 'Enterprise'
+            ? 'Custom to-dos:'
+            : 'Manage tasks to-dos:'}
         </p>
-        <ul className="space-y-4">
+
+        <ul className="space-y-3 sm:space-y-4">
           {features.map((feature, idx) => (
-            <li key={idx} className="flex items-start gap-3 text-sm font-bold text-gray-300">
-              <Sparkles className="shrink-0 mt-0.5" size={14} fill="currentColor" />
+            <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm font-bold text-gray-300">
+              <Sparkles
+                className="shrink-0 mt-0.5"
+                size={14}
+                fill="currentColor"
+              />
               {feature}
             </li>
           ))}

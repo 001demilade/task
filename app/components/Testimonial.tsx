@@ -24,7 +24,7 @@ export default function Testimonial() {
 
         {/* Right Side: Quote and Attribution */}
         <div className="flex flex-col justify-center">
-          <blockquote className="text-3xl md:text-4xl font-medium leading-snug text-[#1A1A1A] mb-10">
+          <blockquote className="text-3xl md:text-4xl font-medium leading-snug text-white mb-10">
             “I cannot stress how important it is to have all of our 
             information in one central place. We use Asana to capture 
             all of our documents, notes, and next steps so we keep 

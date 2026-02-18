@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Facebook, Disc as Discord, Linkedin } from 'lucide-react';
+import { Facebook, Disc as Discord, Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -36,7 +36,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-[#FF8A65] rounded-sm rotate-12 border-2 border-black"></div>
               Sure
             </div>
-            <p className="text-gray-500 text-sm font-bold mt-2">© 2022 UIHUT.COM</p>
+            <p className="text-gray-500 text-sm font-bold mt-2">© 2025</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 text-sm font-bold text-gray-400 underline underline-offset-4 decoration-white/10">
@@ -51,7 +51,7 @@ export default function Footer() {
 
           <div className="flex gap-4">
             <SocialIcon icon={<Facebook size={18} fill="currentColor" />} />
-            <SocialIcon icon={<Discord size={18} fill="currentColor" />} />
+            <SocialIcon icon={<Twitter size={18} fill="currentColor" />} />
             <SocialIcon icon={<Linkedin size={18} fill="currentColor" />} />
           </div>
         </div>

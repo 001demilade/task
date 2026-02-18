@@ -157,13 +157,13 @@ export default function Features() {
                           <div className="bg-[#1E1E1E] px-4 py-3 flex items-center justify-between border-b border-white/5">
                             <div className="flex items-center gap-6">
                               {/* Window Controls */}
-                              <div className="flex items-center gap-2">
+                              <div className="flex items-center gap-2 hidden md:flex">
                                 <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                                 <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                                 <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                               </div>
                               {/* Navigation Arrows */}
-                              <div className="flex gap-4 text-gray-500">
+                              <div className="flex gap-4 text-gray-500 hidden md:flex">
                                 <Sidebar size={18} />
                                 <ChevronLeft size={18} />
                                 <ChevronRight size={18} />
@@ -183,7 +183,7 @@ export default function Features() {
                             </div>
 
                             {/* Action Icons */}
-                            <div className="flex items-center gap-4 text-gray-400">
+                            <div className="flex items-center gap-4 text-gray-400 hidden md:flex">
                               <Share size={18} />
                               <Plus size={18} />
                               <div className="w-4 h-4 border-2 border-gray-400 rounded-sm" />

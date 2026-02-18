@@ -22,7 +22,7 @@ export default function MobileSection() {
         {/* Store Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mt-10">
           <button className="bg-black text-white flex items-center gap-3 px-6 py-3 rounded-xl hover:scale-105 transition-transform">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Apple_logo_black.svg" className="w-6 h-6 invert" alt="Apple" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" className="w-6 h-6 invert" alt="Apple" />
             <div className="text-left leading-none">
               <div className="text-[10px] uppercase font-bold opacity-60">Download on the</div>
               <div className="text-lg font-black tracking-tight">App Store</div>
