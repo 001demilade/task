@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Search, Bell, LayoutGrid, CheckSquare, Calendar, Inbox, ArrowRight, Plus, RotateCw, Sidebar, ChevronLeft, ChevronRight, Share, Rocket, Link2, Flame } from "lucide-react";
+import { Search, Bell, LayoutGrid, CheckSquare, Calendar, Inbox, ArrowRight, Plus, RotateCw, Sidebar, ChevronLeft, ChevronRight, Share, Rocket, Link2, Flame, Menu, X } from "lucide-react";
+import React from "react";
 
 // Tag component definition if missing
 function Tag({ icon, text }: any) {
@@ -19,6 +20,7 @@ export default function Hero() {
   const ref = useRef(null);
   const { scrollY } = useScroll();
   const yFloat = useTransform(scrollY, [0, 500], [0, 100]);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   // SidebarItem function moved above usage
   function SidebarItem({ icon, label, active = false }: any) {
@@ -36,31 +38,66 @@ export default function Hero() {
     <main className="min-h-screen bg-[#FDFCF6] cursor-pointer text-[#1A1A1A] font-sans selection:bg-orange-200">
       
       {/* --- 1. NAVIGATION BAR --- */}
-      <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-7xl mx-auto">
-        <div className="flex items-center gap-10">
-          <div className="flex items-center gap-2 font-black text-2xl tracking-tighter">
-            <div className="w-6 h-6 bg-[#FF8A65] rounded-sm rotate-12 border-2 border-black"></div>
-            Sure
-          </div>
-          <div className="hidden md:flex gap-8 text-sm font-bold text-gray-600">
-            <a href="#" className="hover:text-black">Product</a>
-            <a href="#" className="hover:text-black">Templates</a>
-            <a href="#" className="hover:text-black">Resources</a>
-            <a href="#" className="hover:text-black">Pricing</a>
-          </div>
-        </div>
-        <div className="flex items-center gap-3 sm:gap-6">
-          <button className="text-sm font-bold">Sign in</button>
-          <button className="bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-black transition-colors">
-            Start free <ArrowRight size={16} />
-          </button>
-        </div>
-      </nav>
+      <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-7xl mx-auto relative">
+  
+  {/* Left */}
+  <div className="flex items-center gap-8">
+    <div className="flex items-center gap-2 font-black text-2xl tracking-tighter">
+      <div className="w-6 h-6 bg-[#FF8A65] rounded-sm rotate-12 border-2 border-black"></div>
+      Sure
+    </div>
+
+    {/* Desktop Links */}
+    <div className="hidden md:flex gap-8 text-sm font-bold text-gray-600">
+      <a href="#" className="hover:text-black">Product</a>
+      <a href="#" className="hover:text-black">Templates</a>
+      <a href="#" className="hover:text-black">Resources</a>
+      <a href="#" className="hover:text-black">Pricing</a>
+    </div>
+  </div>
+
+  {/* Right */}
+  <div className="flex items-center gap-3 sm:gap-6">
+    
+    {/* Desktop Buttons */}
+    <div className="hidden md:flex items-center gap-6">
+      <button className="text-sm font-bold">Sign in</button>
+      <button className="bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-black transition-colors">
+        Start free <ArrowRight size={16} />
+      </button>
+    </div>
+
+    {/* Mobile Hamburger */}
+    <button
+      className="md:hidden"
+      onClick={() => setMobileOpen(!mobileOpen)}
+    >
+      {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+    </button>
+  </div>
+
+  {/* Mobile Menu */}
+  {mobileOpen && (
+    <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200 md:hidden">
+      <div className="flex flex-col p-6 gap-6 text-sm font-bold text-gray-700">
+        <a href="#">Product</a>
+        <a href="#">Templates</a>
+        <a href="#">Resources</a>
+        <a href="#">Pricing</a>
+        <hr />
+        <button className="text-left">Sign in</button>
+        <button className="bg-black text-white px-6 py-3 rounded-full">
+          Start free
+        </button>
+      </div>
+    </div>
+  )}
+</nav>
 
         {/* Parallax Calendar */}
         <motion.div
           style={{ y: yFloat }}
-          className="absolute right-[10%] top-44 hidden lg:block rotate-6"
+          className="absolute right-[10%] hidden sm:flex top-44 lg:block rotate-6"
         >
           <div className="bg-[#FFD54F] border-2 border-black p-4 rounded-xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] w-40">
             <div className="text-xs font-black mb-2">2022</div>
