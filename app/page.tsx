@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 export default function Home() {
   return (
     <main>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <Hero />
       <Features />
       <PricingSection />

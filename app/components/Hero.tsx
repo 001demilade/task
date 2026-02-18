@@ -78,18 +78,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto px-6"
+          className="max-w-5xl mx-auto px-6 md:pt-20 pb-12"
         >
-          <h1 className="text-6xl md:text-[90px] font-black leading-[0.9] tracking-tight mb-6">
+          <h1 className="text-6xl md:text-[90px] font-black leading-[0.9] tracking-tight mb-6 md:leading-[0.9] max-w-4xl">
             Regain{" "}
             <span className="relative inline-block">
               <span className="relative z-10">control</span>
-              <span className="absolute bottom-3 left-0 w-full h-4 bg-[#FFD54F] -z-0 rotate-1"></span>
+              <span className="absolute bottom-3 left-0 w-full h-4 bg-[#FFD54F] z-0 rotate-1"></span>
             </span>{" "}
             over your days
           </h1>
 
-          <p className="text-gray-500 text-xl max-w-xl mx-auto mb-10">
+          <p className="text-[#666] max-w-lg text-lg md:text-xl font-medium mb-10 leading-relaxed">
             Stop rushing — centralize, prioritize and progress on projects across apps.
           </p>
 
@@ -105,7 +105,7 @@ export default function Hero() {
 
       {/* ================= 3D DASHBOARD ================= */}
 
-      <section className="relative max-w-5xl mx-auto px-6 mb-32">
+      <section className="max-w-6xl mx-auto px-4 md:px-6 mb-24 relative">
         <motion.div
           whileHover={{
             rotateX: 6,
@@ -130,11 +130,11 @@ export default function Hero() {
           </div>
 
           {/* --- DASHBOARD WITH BROWSER HEADER --- */}
-          <section className="max-w-6xl mx-auto px-6 mb-24">
-            <div className="bg-[#121212] rounded-2xl shadow-2xl border-[1px] border-white/10 overflow-hidden">
+          <section className="max-w-6xl mx-auto px-6 mb-24 md:px-8">
+            <div className="bg-[#121212] rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
               {/* macOS Style Browser Header */}
-              <div className="bg-[#1E1E1E] px-4 py-3 flex items-center justify-between border-b border-white/5">
-                <div className="flex items-center gap-6">
+              <div className="bg-[#1E1E1E] px-4 py-3 flex items-center justify-between border-b border-white/5 md:px-6">
+                <div className="flex items-center gap-6 md:gap-10">
                   {/* Window Controls */}
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
@@ -209,7 +209,7 @@ export default function Hero() {
           </div>
 
           {/* Bar Chart Section */}
-          <div className="flex justify-between h-32 mb-6 px-2 border-l border-white/10 relative">
+          <div className="flex justify-between h-32 mb-6 px-2 border-l border-white/10 relative md:px-4">
             {/* Grid lines */}
             <div className="absolute left-0 w-full h-[1px] bg-white/5 top-0" />
             <div className="absolute left-0 w-full h-[1px] bg-white/5 top-1/4" />

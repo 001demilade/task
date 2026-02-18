@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 
 function FeatureStep({ number, title, desc, active = false, onClick }: { number: string; title: string; desc: string; active?: boolean; onClick?: () => void }) {
   return (
-    <div className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer ${
+    <div className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer md:hidden ${
         active
          ? "border-2 border-[#1A1A1A] bg-white shadow-sm"
          : "border border-gray-200 hover:bg-gray-400"
@@ -29,16 +29,16 @@ function FeatureStep({ number, title, desc, active = false, onClick }: { number:
     >
         {number}
       </div> */}
-
+{/* 
        <div className={`p-6 rounded-2xl border-2 transition-all cursor-pointer ${active ? 'bg-white border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' : 'border-transparent opacity-50'}`}>
-      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4">
         <span className="w-8 h-8 rounded-lg border-2 border-black flex items-center justify-center font-black text-sm">{number}</span>
         <div>
           <h4 className="font-black text-lg">{title}</h4>
           <p className="text-xs font-bold text-gray-400">{desc}</p>
         </div>
       </div>
-    </div>
+    </div> */}
 
       {/* Text Content */}
       <div>
@@ -83,23 +83,64 @@ export default function Features() {
 
             {/* Project that work section */}
             <section className="max-w-7xl mx-auto px-6 py-24 text-center">
-                <h2 className="text-5xl font-medium tracking-tighter mb-4">Projects That Work.</h2>
-                <p className="text-gray-500 max-w-2xl mx-auto font-light tracking-tighter mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter mb-4">Projects That Work.</h2>
+                <p className="text-gray-500 max-w-xl sm:max-w-2xl mx-auto text-sm sm:text-base font-light tracking-tighter mb-12 md:mb-16">
                     Whether you're managing your next big project or digitalizing task management for
                     your team's daily business, you need to know who's doing what, when.
                 </p>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-black">
+                    {/* Mobile-only view (Single Column Card) */}
+                    
+                      {/* <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">1</span>
+                        <h4 className="font-black">Dashboard</h4>
+                      </div>
+                        <p className="text-gray-500">Everything in one place</p>
+                        <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">2</span>
+                        <h4 className="font-black">Projects</h4>
+                      </div>
+                        <p className="text-gray-500">Clear overview, full efficiency</p>
+                        <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">3</span>
+                        <h4 className="font-black">Tasks</h4>
+                      </div>
+                        <p className="text-gray-500">Where work gets done</p>
+                        <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">4</span>
+                        <h4 className="font-black">Agenda</h4>
+                      </div>
+                        <p className="text-gray-500">Your own personal board</p> */}
+                    
+                    
                     {/* List of features */}
-                    <div className="space-y-4 text-left max-w-sm">
-                        <FeatureStep number="1" title="Dashboard" desc="Everything in one place" />
-                        <FeatureStep number="2" title="Projects" desc="Clear overview, full efficiency" />
-                        <FeatureStep number="3" title="Tasks" desc="Where work gets done" active={active === 2} onClick={() => setActive(2)} />
-                        <FeatureStep number="4" title="Agenda" desc="Your own personal board" />
-                    </div>
+                    {/* <div className=" grid-cols-2 items-center gap-8 hidden md:grid text-left">
+                      <div className="flex items-center gap-4">
+                        <div className=" md:grid grid-cols-2"></div>
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">1</span>
+                        <h4 className="font-black">Dashboard</h4>
+                      </div>
+                        <p className="text-gray-500">Everything in one place</p>
+                        <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">2</span>
+                        <h4 className="font-black">Projects</h4>
+                      </div>
+                        <p className="text-gray-500">Clear overview, full efficiency</p>
+                        <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">3</span>
+                        <h4 className="font-black">Tasks</h4>
+                      </div>
+                        <p className="text-gray-500">Where work gets done</p>
+                        <div className="flex items-center gap-4">
+                        <span className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center">4</span>
+                        <h4 className="font-black">Agenda</h4>
+                      </div>
+                        <p className="text-gray-500">Your own personal board</p>
+                    </div> */}
 
                     {/* Large Visual Card */}
-                    <section className="relative max-w-5xl mx-auto px-6 mb-32">
+                    <section className="relative w-full max-w-5xl mx-auto px-4 sm:px-6 mb-16 md:mb-32">
                       <motion.div
                         whileHover={{
                           rotateX: 6,
@@ -116,7 +157,7 @@ export default function Features() {
                           <div className="bg-[#1E1E1E] px-4 py-3 flex items-center justify-between border-b border-white/5">
                             <div className="flex items-center gap-6">
                               {/* Window Controls */}
-                              <div className="flex gap-2">
+                              <div className="flex items-center gap-2">
                                 <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
                                 <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
                                 <div className="w-3 h-3 rounded-full bg-[#28C840]" />
@@ -130,14 +171,14 @@ export default function Features() {
                             </div>
 
                             {/* URL / Search Bar */}
-                            <div className="flex-1 max-w-xl mx-4">
-                              <div className="bg-[#121212] rounded-md py-1.5 px-3 flex items-center justify-between text-gray-500">
-                                <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-4 px-4 py-2 rounded-lg border border-white/10 bg-[#1A1D21]">
+                              <div className="bg-[#121212] py-1.5 px-1 flex items-center justify-between text-gray-500">
+                                <div className="flex items-center gap-1">
                                   <div className="w-4 h-4 bg-gray-600 rounded-full" />
-                                  <RotateCw size={14} />
+                                  <RotateCw size={11} />
                                 </div>
                                 <div className="text-xs tracking-tight">sure.app/dashboard/recent</div>
-                                <div className="w-4" />
+                                <div className="w-4 h-4 bg-gray-600 rounded-full" />
                               </div>
                             </div>
 
@@ -151,7 +192,7 @@ export default function Features() {
 
                           <div className="flex gap-6">
                             {/* Sidebar */}
-                            <aside className="w-40 hidden md:block space-y-4">
+                            <aside className="w-32 lg:w-40 hidden md:block space-y-4">
                               <SidebarItem icon={<LayoutGrid size={16}/>} label="Home" active />
                               <SidebarItem icon={<CheckSquare size={16}/>} label="My Tasks" />
                               <SidebarItem icon={<Calendar size={16}/>} label="My Plan" />
@@ -205,7 +246,7 @@ export default function Features() {
                     </section>
 
                     {/* Remote Teams & Teamwork */}
-                    <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 mb-24">
+                    <section className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 md:mb-24">
 
                         {/* Remote Teams (Yellow) */}
                         <div className="bg-[#FFD54F] rounded-[40px] border-2 border-black p-12 relative overflow-hidden min-h-[500px]">
@@ -245,7 +286,7 @@ export default function Features() {
           <p className="text-sm font-medium mb-8 text-gray-500">
             Inefficient team collaboration and email overload can destroy your team's productivity and cost you money...
             but they don't have to. Digital task management software helps align your team and boost transparency.
-            Get more done with Sure!
+            Get more Sure!
           </p>
           <button className="flex items-center gap-2 font-bold">Learn More <ArrowRight size={18} /></button>
           
